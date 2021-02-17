@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
-           and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="My Scoreboard" />
+    <meta name="author" content="Pakham" />
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <title>My Scoreboard - {% block title %}{% endblock %}</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+
+    {% block stylesheets %}{% endblock %}
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-header">
+          <li><a href="{{ path('home') }}">Home</a></li>
+          <li><a href="{{ path('game_create') }}">Add Game</a></li>
+          <li><a href="{{ path('player_create') }}">Add player</a></li>
+          <li><a href="{{ path('contest_create') }}">Add contest</a></li>
+        </ul>
+      </nav>
+    </header>
+    {% block body %}{% endblock %} {% block javascripts %} {#{{
+      encore_entry_script_tags("app")
+    }}#} {% endblock %}
+  </body>
 </html>

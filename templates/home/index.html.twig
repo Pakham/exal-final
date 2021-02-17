@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %} {% block title %}home{% endblock %} {% block body
+%}
+<div class="container-tab">
+  <table
+    class="table table-player table-bordered table-hover table-sm table-dark table-striped text-center"
+  >
+    <thead>
+      <h2>Joueurs</h2>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Pseudo</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for player in player %}
+      <tr>
+        <td class="align-middle">{{ player.id }}</td>
+        <td class="align-middle">{{ player.email }}</td>
+        <td class="align-middle">{{ player.nickname }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <table
+    class="table table-player table-bordered table-hover table-sm table-dark table-striped text-center"
+  >
+    <thead>
+      <h2>Jeux</h2>
+      <tr>
+        <th>ID</th>
+        <th>Titre</th>
+        <th>Joueurs minimum</th>
+        <th>Joueurs maximum</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for game in game %}
+      <tr>
+        <td class="align-middle">{{ game.id }}</td>
+        <td class="align-middle">{{ game.title }}</td>
+        <td class="align-middle">{{ game.minPlayers }}</td>
+        <td class="align-middle">{{ game.maxPlayers }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <table
+    class="table table-player table-bordered table-hover table-sm table-dark table-striped text-center"
+  >
+    <thead>
+      <h2>Match</h2>
+      <tr>
+        <th>Nom du jeux</th>
+        <th>Nombre de joueurs</th>
+        <th>Date de démarrage</th>
+        <th>Gagnant du match</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="align-middle"></td>
+        <td class="align-middle"></td>
+        <td class="align-middle"></td>
+        <td class="align-middle"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}

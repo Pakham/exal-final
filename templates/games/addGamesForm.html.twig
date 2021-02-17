@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %} {% block title %}Hello GamesController!{%
+endblock %} {% block body %}
+<h2 class="pb-5">Ajouter un jeux</h2>
+{{ form_start(addGamesForm) }}
+<div class="form-add">
+  <div class="col-4 my-3">
+    {{ form_label(addGamesForm.title) }}
+    {{ form_widget(addGamesForm.title) }}
+  </div>
+  <div class="col-4 my-3">
+    {{ form_label(addGamesForm.min_players) }}
+    {{ form_widget(addGamesForm.min_players) }}
+  </div>
+  <div class="col-4 my-3">
+    {{ form_label(addGamesForm.max_players) }}
+    {{ form_widget(addGamesForm.max_players) }}
+  </div>
+
+  <div class="col-4">
+    {{ form_widget(addGamesForm.valider) }}
+  </div>
+</div>
+
+{{ form_end(addGamesForm) }}
+{% endblock %}

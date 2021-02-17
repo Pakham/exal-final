@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %} {% block title %}Hello GamesController!{%
+endblock %} {% block body %}
+<h2 class="pb-5">Ajouter un Match</h2>
+{{ form_start(addContestsForm) }}
+<div class="form-add">
+  <div class="col-4 my-3">
+    {{ form_label(addContestsForm.game_id) }}
+    {{ form_widget(addContestsForm.game_id) }}
+  </div>
+  <div class="col-4 my-3">
+    {{ form_label(addContestsForm.start_date) }}
+    {{ form_widget(addContestsForm.start_date) }}
+  </div>
+  <div class="col-4 my-3">
+    {{ form_label(addContestsForm.winner_id) }}
+    {{ form_widget(addContestsForm.winner_id) }}
+  </div>
+
+  <div class="col-4">
+    {{ form_widget(addContestsForm.valider) }}
+  </div>
+</div>
+
+{{ form_end(addContestsForm) }}
+{% endblock %}
